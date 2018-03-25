@@ -1,0 +1,46 @@
+  
+.nav-container  
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  position: fixed
+  padding: 1.875rem
+  z-index: 1000
+  color: $darkgrey
+  a
+    text-decoration: none
+    color: $darkgrey
+    padding: .3rem
+  
+.nav-container.light
+  color: white
+  a 
+    color: white
+    &:hover
+      color: $lightgrey
+
+.logo
+  position: absolute
+  padding: 1.875rem
+  margin: 0 auto
+
+.nav-container, .logo
+  left: 0
+  top: 0
+  right: 0
+  
+.nav-container.scrolled
+  color: $darkgrey
+  background: white
+
+  a 
+    color: $darkgrey  
+
+.primary-nav
+  margin-right: auto
+
+  a
+    margin-right: 1rem
+  
+.secondary-nav 
+  margin-left: auto
