@@ -1,11 +1,12 @@
 import React from 'react'
-import ProductCard from 'components/global/ProductCard'
+import ProductCard from 'components/products/ProductCard'
 
 const ProductList = ({ products }) => (
-  <section className="product-list">
+  <section className="product-list content">
     {products.map((product, i) => (
       <ProductCard
         key={i}
+        id={product.id}
         name={product.name}
         imageUrl={product.imageUrl}
         price={product.price}

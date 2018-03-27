@@ -1,4 +1,5 @@
 import { FETCH_ERROR, FETCH_REQUEST, FETCH_SUCCESS } from 'reducers/types'
+import setFilter from 'actions/filterActions'
 
 const fetchFlowersSuccess = payload => ({
   type: FETCH_SUCCESS,
@@ -24,6 +25,7 @@ const fetchFlowersWithRedux = () => dispatch => {
     if (response.status === 200) {
       console.log(json)
       dispatch(fetchFlowersSuccess(json))
+      dispatch(setFilter(json[0].color))
     } else {
       dispatch(fetchFlowersError())
     }

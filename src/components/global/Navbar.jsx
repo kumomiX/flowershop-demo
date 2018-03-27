@@ -35,7 +35,7 @@ class Navbar extends Component {
         >
           <nav className="primary-nav">
             <Link to="/products">Products</Link>
-            <Link to="/colors">Colors</Link>
+            <Link to="/options">Options</Link>
           </nav>
 
           <Link to="/">

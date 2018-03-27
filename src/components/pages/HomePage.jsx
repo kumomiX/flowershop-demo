@@ -3,18 +3,23 @@ import Header from 'components/global/Header'
 import Navbar from 'components/global/Navbar'
 import ProductList from 'components/products/ProductList'
 import { connect } from 'react-redux'
-import fetchFlowersWithRedux from 'actions/flowersActions'
+import setFilter from 'actions/filterActions'
+import OptionsList from 'components/options/OptionsList'
 
 class HomePage extends Component {
-  componentDidMount() {
-    if (this.props.flowers.length < 10) this.props.fetchFlowersWithRedux()
-  }
-
   render() {
     return (
       <div className="homepage">
         <Navbar light={'light'} />
-        <Header />
+        <Header
+          text={'Flowers for you.'}
+          imageUrl={'https://unsplash.it/1980?image=940'}
+          arrow
+        />
+        <OptionsList
+          products={this.props.flowers}
+          setFilter={this.props.setFilter}
+        />
         <main>
           {this.props.flowers ? (
             <ProductList products={this.props.flowers} />
@@ -33,7 +38,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchFlowersWithRedux: () => dispatch(fetchFlowersWithRedux())
+  setFilter: c => dispatch(setFilter(c))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage)

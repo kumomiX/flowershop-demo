@@ -16,6 +16,7 @@ WebFont.load({
 
 const store = configureStore()
 store.dispatch({ type: 'CLEAR' })
+store.dispatch({ type: 'CLEAR_FILTER' })
 
 const Root = () => (
   <Provider store={store}>

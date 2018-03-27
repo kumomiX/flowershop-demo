@@ -1,13 +1,18 @@
 import React from 'react'
 
-const Header = () => (
-  <header className="homepage-header">
+const Header = ({ text, arrow, imageUrl }) => (
+  <header
+    className="homepage-header"
+    style={{ backgroundImage: `url(${imageUrl}) ` }}
+  >
     <div className="content">
-      <h1>Flowers for you.</h1>
+      <h1>{text}</h1>
     </div>
-    <div className="down-arrow">
-      <span className="arrow"> ❯ </span>
-    </div>
+    {arrow ? (
+      <div className="down-arrow">
+        <span className="arrow"> ❯ </span>
+      </div>
+    ) : null}
   </header>
 )
 

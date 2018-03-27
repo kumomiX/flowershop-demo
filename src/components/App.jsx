@@ -1,13 +1,37 @@
-import React from 'react'
-import { Route } from 'react-router-dom'
-import Home from 'components/home/HomePage'
-import ProductsPage from 'components/products/ProductsPage'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Route, withRouter } from 'react-router-dom'
+import fetchFlowersWithRedux from 'actions/flowersActions'
+import setFilter from 'actions/filterActions'
+import Home from 'components/pages/HomePage'
+import Products from 'components/pages/ProductsPage'
+import Options from 'components/pages/OptionsPage'
+import Product from 'components/pages/ProductPage'
 
-const App = () => (
-  <div>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/products" component={ProductsPage} />
-  </div>
-)
+class App extends Component {
+  componentDidMount() {
+    if (this.props.flowers.length <= 0) this.props.fetchFlowersWithRedux()
+  }
+  render() {
+    return (
+      <div>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/products" component={Products} />
+        <Route exact path="/options" component={Options} />
+        <Route path="/product" component={Product} />
+      </div>
+    )
+  }
+}
 
-export default App
+const mapStateToProps = state => {
+  const flowers = state.flowers
+  return { flowers }
+}
+
+const mapDispatchToProps = dispatch => ({
+  fetchFlowersWithRedux: () => dispatch(fetchFlowersWithRedux()),
+  setFilter: c => dispatch(setFilter(c))
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
