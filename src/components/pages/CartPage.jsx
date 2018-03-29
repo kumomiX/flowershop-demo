@@ -12,7 +12,7 @@ import {
 const CartPage = ({ cart, changeQuantity, removeFromCart, addQuantity }) => (
   <div className="cartpage">
     <Navbar />
-    <header>
+    <header className="smaller">
       <h1>shopping cart</h1>
     </header>
     <main>

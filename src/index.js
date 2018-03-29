@@ -10,7 +10,11 @@ import configureStore from 'store/configureStore'
 
 WebFont.load({
   google: {
-    families: ['Montserrat:200,300,400,500', 'sans-serif']
+    families: [
+      'Montserrat:200,300,400,500',
+      'Open Sans:200,300,400,500',
+      'sans-serif'
+    ]
   }
 })
 

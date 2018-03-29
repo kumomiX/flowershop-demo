@@ -8,6 +8,7 @@ import Products from 'components/pages/ProductsPage'
 import Options from 'components/pages/OptionsPage'
 import Product from 'components/pages/ProductPage'
 import Cart from 'components/pages/CartPage'
+import Checkout from 'components/pages/CheckoutPage'
 import Loading from 'components/global/Loading'
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
         <Route exact path="/products" component={Products} />
         <Route exact path="/options" component={Options} />
         <Route exact path="/cart" component={Cart} />
+        <Route exact path="/checkout" component={Checkout} />
         <Route path="/product" component={Product} />
       </div>
     ) : (

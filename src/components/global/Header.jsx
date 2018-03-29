@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = ({ text, arrow, imageUrl }) => (
   <header
-    className="homepage-header"
+    className="homepage-header big"
     style={{ backgroundImage: `url(${imageUrl}) ` }}
   >
     <div className="content">

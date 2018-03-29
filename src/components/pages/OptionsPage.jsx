@@ -22,6 +22,7 @@ class OptionsPage extends Component {
                 .find(f => f.color === filterStr)
                 .imageUrl.replace(/\/\d\d\d\?/, '/1980?')}
             />
+
             <main>
               <OptionsLinks
                 flowers={flowers}

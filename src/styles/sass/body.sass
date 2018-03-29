@@ -1,4 +1,4 @@
-*, *::before, *::after
+*
   margin: 0 auto
   padding: 0
   box-sizing: border-box
@@ -9,6 +9,20 @@ body
   font-family: Montserrat, sans-serif
   font-weight: 400
   color: $bluishgrey
+
+
+h1
+  letter-spacing: .2rem
+  font-size: 1.125rem
+  color: $bluishgrey
+  text-transform: uppercase
+  font-weight: 600
+h3
+  letter-spacing: .2rem
+  text-transform: uppercase
+  font-size: 1.125rem
+  line-height: 1.75rem
+  color: #2d2d40
 
 .content
   margin-left: auto
@@ -29,16 +43,14 @@ a
   text-decoration: none
 
 input[type="submit"], button , .btn
-  border-style: solid
-  border-width: 3px
-  font-weight: 500
-  padding: .9375rem 1.875rem
   background: #9f9fae
   border: 3px solid #9f9fae
-  color: #fff
-  line-height: 2.125rem
-  font-weight: 200
+  font-weight: 500
+  font-family: Montserrat
+  font-size: 1.3rem
+  color: white
   line-height: .9
+   padding: .9375rem 1.875rem
   margin-bottom: .25em
   margin-top: .25em
   cursor: pointer
@@ -50,19 +62,76 @@ input[type="submit"], button , .btn
     background: white
     color: #9f9fae
 
-input
+input, select
   height: 3.75rem
-  border-color: #e7e7e7
-  color: #50505b
+  color: $bluishgrey
   position: relative
   width: 100%
   line-height: 1.5
   font-size: 1.125rem
   font-family: Montserrat, sans-serif
   outline: none
+  border: 2px solid #e7e7e7
+  border-radius: 0
+  font-weight: 300
+  line-height: 1.5
+  //margin-top: 1.25rem
+  min-height: 3.75rem
+  padding: .6875rem .9375rem
+  position: relative
+  &:focus, &:active
+    border-color: $bluishgrey
+    background: white
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button 
   -webkit-appearance: none
   margin: 0
+
+.input-wrap 
+  border-radius: 0
+  margin-top: 1.25rem
+  input, select, .btn
+    margin-top: 0   
  
+.price
+  font-family: Open Sans, Arial, sans-serif
+  font-weight: 600
+  font-size: 1.75rem
+  line-height: 2.5rem
+
+
+label
+  font-size: 1.125rem
+  line-height: 1.75rem
+
+label.required
+  position: relative
+
+label.required::after 
+  color: #edadad
+  content: '*'
+  font-size: 1.5rem
+  position: absolute
+  right: .625rem
+  top: .625rem
+  z-index: 10
+
+.select-fallback
+  height: 3.75rem
+  //position: relative
+  text-align: left
+  width: 100%
+  select
+    -webkit-appearance: none
+  &::before
+    color: #9f9fae
+    content: '\276f'
+    display: block
+    pointer-events: none
+    position: absolute
+    right: 1rem
+    top: 1.125rem
+    transform: rotate(90deg)
+    z-index: 1
+  

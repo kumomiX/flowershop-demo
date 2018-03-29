@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import CartItem from 'components/cart/CartItem'
 
 const CartListing = ({ cart, changeQuantity, removeFromCart, addQuantity }) => {
-  const subtotal = cart.reduce((acc, x) => {
-    return (acc += x.quantity * x.product.price)
-  }, 0)
+  const subtotal = cart.reduce(
+    (acc, x) => (acc += x.quantity * x.product.price),
+    0
+  )
   return (
     <form action="" className="cart-listing">
       <div className="cart-list-headings">

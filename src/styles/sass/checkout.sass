@@ -1,0 +1,154 @@
+
+.checkout
+  margin-top: 1.875rem
+  .content
+    @media screen and (min-width: $phone)
+      display: flex
+
+  h2
+    color: inherit
+    font-weight: 400
+    margin: 0
+    text-transform: uppercase
+    font-size: 1.125rem
+    line-height: 1.75rem
+
+  .price
+    margin-right: 0
+    padding-left: 1.875rem
+
+  .price-calculations
+    border-bottom: 5px solid #f0f0f0
+    padding: 1.875rem 
+    .price-item
+      font-size: 1.125rem
+      font-weight: 500
+      line-height: 1.75rem
+      align-items: center
+      display: flex
+      flex-direction: row
+      .price
+        font-weight: 500
+        font-size: inherit
+
+  .total-price
+    border-bottom: 5px solid #f0f0f0
+    padding: 1.875rem
+    align-items: center
+    display: flex
+    flex-direction: row
+
+  fieldset
+    margin: 0
+    padding: 0
+    margin-bottom: 1.875rem
+    border: 0
+    button, .btn
+      margin: 1.25rem 0 0 1.875rem
+      max-width: 12.5rem
+      min-height: 3.75rem
+      @media screen and (min-width: $phone)
+        width: 12.5rem
+  
+
+  .form-header
+    background: #e7e7e7
+    border: 2px solid #e7e7e7
+    color: #9f9fae
+    padding: 1rem 1.875rem
+    &.inactive
+      background: #f7f7f7
+      border-color: #f7f7f7
+      color: #cfcfd5
+    &.completed
+      background: #e8f7ed
+      border-color: #e8f7ed
+      color: #95cca9
+      cursor: pointer
+      &:hover
+        border-color: #95cca9
+        outline: 0
+
+  .form-content
+    height: auto
+
+  .collapsed .form-content
+    height: 0
+    overflow: hidden
+
+
+  .form-fields
+    display: flex
+    flex-wrap: wrap
+    padding: .9375rem 1.875rem 0
+
+  .input-wrap
+    width: 100%
+  
+  .firstname, .lastname, .state, .postcode, .country, .expiry-month, .expiry-year 
+    @media screen and (min-width: $phone)
+      width: calc((100% - 1.25rem)/ 2)
+  .firstname, .state, .country, .card-cvc, .expiry-month
+    margin-left: 0
+    margin-right: auto
+  .lastname, .postcode, .expiry-year 
+    margin-right: 0
+
+.checkout-form
+  margin: 0
+  max-width: none
+  padding: 0
+  @media screen and (min-width: $phone)
+    order: 1
+    padding-right: 3.75rem
+    width: 60%
+
+
+.checkout-summary
+  margin: 0 0 4.625rem
+  max-width: none
+  padding: 0
+  @media screen and (min-width: $phone)
+    margin: 0
+    order: 2
+    width: 40%
+  
+
+  
+.checkout-items
+  border-bottom: 5px solid #f0f0f0
+  padding: 1.875rem
+
+  .checkout-product
+    align-items: center
+    display: flex
+    flex-direction: row
+    &:not(:last-child) 
+      margin-bottom: 1.875rem
+
+  .product-image
+    width: 5rem
+    margin: 0
+    align-items: center
+    display: flex
+    flex-direction: row
+    img
+      margin: 0
+      border: 0
+      height: auto
+      max-width: 100%   
+  
+  .product-info
+    display: flex
+    flex-direction: column
+    line-height: 1.625rem
+    margin: 0 1.875rem
+    .product-title
+      font-weight: 600
+    .price
+      margin: 0
+      padding-left: 0
+      line-height: 2.5rem
+      font-size: inherit
+      font-weight: 400
+
