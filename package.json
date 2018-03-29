@@ -18,9 +18,9 @@
   },
   "scripts": {
     "sass-build":
-      "node-sass-chokidar src/styles/sass/index.sass -o src/styles/css/index.css --indented-syntax",
+      "node-sass-chokidar src/styles/sass/index.sass -o src/styles/css/ --indented-syntax",
     "sass-watch":
-      "node-sass-chokidar src/styles/sass/index.sass -o src/styles/css/index.css --indented-syntax--watch",
+      "node-sass-chokidar src/styles/sass/index.sass -o src/styles/css/ --indented-syntax--watch",
     "start-js": "react-scripts start",
     "build-js": "react-scripts build",
     "start": "npm-run-all -p sass-watch start-js",
