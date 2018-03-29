@@ -1,0 +1,141 @@
+.cartpage
+
+  header
+    background: white
+    margin-top: 10.5rem
+  h1
+    letter-spacing: .2rem
+    font-size: 1.125rem
+    color: $bluishgrey
+    text-transform: uppercase
+    font-weight: 600
+  h3
+    font-weight: 300
+    margin: 0
+    letter-spacing: .2rem
+    text-transform: uppercase
+    font-size: 1.125rem
+    line-height: 1.75rem
+    color: #2d2d40
+
+
+.cart-listing
+  max-width: none
+  padding: 0
+  margin-bottom: 1em
+  margin-top: 1em
+
+  .total-price
+    border-bottom: 5px solid #f0f0f0
+    border-top: 5px solid #f0f0f0
+    padding: 1.875rem
+    text-align: right
+    font-weight: 500
+    font-size: 1.5rem
+    line-height: 2.125rem
+    align-items: center
+    display: flex
+    flex-direction: row
+    @media screen and (min-width: $phone)
+      justify-content: flex-end
+    .price
+      margin: 0
+      margin-left: auto
+      padding-left: 1.875rem
+      @media screen and (min-width: $phone)
+        margin: 0
+
+  .submit
+    margin: 1.875rem auto
+    @media screen and (min-width: $phone)
+      margin: 1.875rem 1.875rem 1.875rem auto
+
+.cart-list-headings
+  border-bottom: 5px solid #f0f0f0
+  color: #9f9fae
+  display: flex
+  flex-direction: row
+  padding: 1.875rem
+  .cart-product-header
+    padding-right: 1.875rem
+    width: 10.625rem
+    @media screen and (max-width: $phone)
+      display: none
+
+  
+  .cart-header-group
+    display: flex
+    align-items: center
+    flex: 1
+    flex-direction: row
+    @media screen and (max-width: $phone)
+      display: none
+    & > div
+      padding-right: 1.875rem
+      width: 33.33%
+
+.cart-item
+  display: flex
+  flex-direction: row
+  padding: 1.875rem
+  position: relative
+
+  .product-image
+    flex-shrink: 0
+    height: 8.75rem
+    margin: 0 1.875rem 0 0
+    width: 8.75rem
+    img
+      height: inherit
+      margin: 0
+      width: inherit
+      border: 0
+      background: rgb(218, 218, 218)
+
+  .cart-details
+    display: flex
+    flex-grow: 1
+    align-items: center
+    flex-direction: column
+    padding-right: 2.5rem
+    @media screen and (min-width: $phone)
+      flex-direction: row
+      padding-right: 0
+    .cart-title, .cart-quantity, .cart-price
+      padding: 0 0 1.25rem
+      width: 100%
+      @media screen and (min-width: $phone)
+        padding: 0 1.875rem 0 0
+        width: 33.33%
+    .quantity-input
+      width: 100% 
+    .price
+      margin: 0
+      font-size: 1.125rem
+      line-height: 1.75rem
+      font-weight: 500 
+
+  .cart-delete
+    position: absolute
+    right: .9375rem
+    top: .9375rem
+    align-items: center
+    display: flex
+    flex-direction: row
+    @media screen and (min-width: $phone)
+      height: 100%
+      top: 0
+    .remove
+      background: 0 0
+      border: 0
+      color: #9f9fae
+      margin: 0
+      min-height: none
+      min-width: 0
+      padding: .9375rem
+      &:hover
+        color: $bluishgrey
+    svg
+      height: 1.5rem
+      width: 1.5rem   
+

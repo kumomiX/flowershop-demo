@@ -1,23 +1,29 @@
 
 
 .product-list
-  margin-top: 1.875rem
+  margin-top: 4.625rem
   display: flex
   flex-wrap: wrap
-  //justify-content: center
+  margin-bottom: calc(4.625rem - 1.875rem)
+  flex-direction: column
+  @media screen and (min-width: $phone) 
+    flex-direction: row
 
 
 .products .product-list
   margin-top: 10rem
 
 .product-item
-  margin: 0 1.875rem 1.875rem 0
+  margin: 0 auto 1.875rem auto
   cursor: pointer
   position: relative
   // float: left
-  width: calc((100% - 3.75rem) / 3)
-
-
+  width: 75%
+  @media screen and (min-width: $phone) 
+    margin: 0 1.875rem 1.875rem 0
+    width: calc((100% - 3.75rem) / 3)
+    &:nth-child(3n+3)
+      margin: 0 0 1.875rem 0
 
   .product-image
     opacity: 1
@@ -58,6 +64,7 @@
       text-transform: uppercase
       font-size: 1.125rem
       line-height: 1.75rem
+      font-weight: 300
 
     .price
       font-weight: 600
@@ -65,5 +72,15 @@
       font-size: 1.75rem
       line-height: 2.5rem
 
-.product-item:nth-child(3n+3)
-  margin: 0 0 1.875rem 0
+
+
+.top-picks
+  margin-top: 4.625rem
+  h2  
+    display: block
+    font-size: 3rem
+    line-height: 3.625rem
+    font-weight: 200
+    margin-bottom: .25em
+    margin-top: .25em
+    text-align: center

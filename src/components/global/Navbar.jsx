@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import logo from 'assets/logo/logo1.svg'
 
 class Navbar extends Component {
@@ -47,12 +48,21 @@ class Navbar extends Component {
           </Link>
 
           <nav className="secondary-nav">
-            <Link to="/cart">Cart (n)</Link>
+            <Link to="/cart">Cart ({this.props.quantity})</Link>
           </nav>
         </div>
+        {/* {this.state.scrolled && (
+          <button className="scroll-btn" onClick={e => window.scrollTo(0, 0)} />
+        )} */}
       </nav>
     )
   }
 }
 
-export default Navbar
+const mapStateToProps = state => {
+  const cart = state.cart
+  const quantity = cart.reduce((acc, item) => (acc += item.quantity), 0)
+  return { quantity }
+}
+
+export default connect(mapStateToProps, null)(Navbar)

@@ -7,19 +7,24 @@ import Home from 'components/pages/HomePage'
 import Products from 'components/pages/ProductsPage'
 import Options from 'components/pages/OptionsPage'
 import Product from 'components/pages/ProductPage'
+import Cart from 'components/pages/CartPage'
+import Loading from 'components/global/Loading'
 
 class App extends Component {
   componentDidMount() {
     if (this.props.flowers.length <= 0) this.props.fetchFlowersWithRedux()
   }
   render() {
-    return (
+    return this.props.flowers.length > 0 ? (
       <div>
         <Route exact path="/" component={Home} />
         <Route exact path="/products" component={Products} />
         <Route exact path="/options" component={Options} />
+        <Route exact path="/cart" component={Cart} />
         <Route path="/product" component={Product} />
       </div>
+    ) : (
+      <Loading />
     )
   }
 }

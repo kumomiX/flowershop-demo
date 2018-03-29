@@ -3,38 +3,35 @@ import Navbar from 'components/global/Navbar'
 import { connect } from 'react-redux'
 import Loading from 'components/global/Loading'
 import ProductListing from 'components/products/ProductListing'
+import addToCartWithRedux from 'actions/cartActions'
+import { addQuantityWithRedux } from 'actions/cartActions'
 
 class ProductPage extends Component {
-  item = {}
+  product = {}
 
   componentDidMount() {
-    if (this.props.flowers && this.props.flowers.length >= 1) {
-      this.getItem()
-    }
+    this.getProduct()
   }
 
-  getItem = () => {
+  getProduct = () => {
     const id = this.props.location.pathname.replace(/\/product\//, '')
-    const item = this.props.flowers.find(i => i.id === id)
-    this.item = item
+    const product = this.props.flowers.find(i => i.id === id)
+    this.product = product
     this.forceUpdate()
   }
 
   render() {
-    const { price, description, name, imageUrl } = this.item
-
-    return Object.getOwnPropertyNames(this.item).length >= 1 ? (
+    return Object.getOwnPropertyNames(this.product).length >= 1 ? (
       <div className="product-page">
         <Navbar />
 
         <main className="content">
           <ProductListing
-            price={price}
-            description={description}
-            name={name}
-            imageUrl={imageUrl}
+            addToCart={this.props.addToCart}
+            addQuantity={this.props.addQuantity}
+            product={this.product}
+            cart={this.props.cart}
           />
-          <section className="product-info">info</section>
         </main>
       </div>
     ) : (
@@ -45,9 +42,14 @@ class ProductPage extends Component {
 
 const mapStateToProps = state => {
   const flowers = state.flowers
-  return { flowers }
+  const cart = state.cart
+  return { flowers, cart }
 }
+const mapDispatchToProps = dispatch => ({
+  addToCart: (product, quantity) =>
+    dispatch(addToCartWithRedux(product, quantity)),
+  addQuantity: (index, quantity) =>
+    dispatch(addQuantityWithRedux(index, quantity))
+})
 
-// export default ProductPage
-
-export default connect(mapStateToProps, null)(ProductPage)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductPage)

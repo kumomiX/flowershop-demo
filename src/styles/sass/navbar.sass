@@ -8,23 +8,26 @@
   font-size: 1.2rem
   padding: 1.875rem
   z-index: 1000
+  font-weight: 400
   color: $darkgrey
   a
     text-decoration: none
     color: $darkgrey
     padding: .3rem
+    &:hover
+      color: lighten($darkgrey,40%)
+
+  .logo
+    position: absolute
+    padding: 1.875rem
+    margin: 0 auto
   
 .nav-container.light
   color: white
   a 
     color: white
     &:hover
-      color: $lightgrey
-
-.logo
-  position: absolute
-  padding: 1.875rem
-  margin: 0 auto
+      color: darken(white,40%)
 
 .nav-container, .logo
   left: 0
@@ -48,3 +51,16 @@
 .secondary-nav 
   margin: 0
   margin-left: auto
+
+.scroll-btn
+  display: flex
+  justify-content: center
+  align-items: center
+  border-radius: 50%
+  position: fixed
+  right: 20px
+  bottom: 20px
+  width: 20px
+  height: 20px
+  outline: none
+  z-index: 1000

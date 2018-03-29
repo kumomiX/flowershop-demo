@@ -23,7 +23,6 @@ const fetchFlowersWithRedux = () => dispatch => {
   dispatch(fetchFlowersReq())
   return fetchFlowers().then(([response, json]) => {
     if (response.status === 200) {
-      console.log(json)
       dispatch(fetchFlowersSuccess(json))
       dispatch(setFilter(json[0].color))
     } else {

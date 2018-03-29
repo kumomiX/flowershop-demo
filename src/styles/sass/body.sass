@@ -7,7 +7,7 @@ body
   line-height: 1.875
   font-size: 1rem
   font-family: Montserrat, sans-serif
-  font-weight: 3
+  font-weight: 400
   color: $bluishgrey
 
 .content
@@ -25,8 +25,10 @@ p
   -webkit-margin-start: 0px
   -webkit-margin-end: 0px
 
+a
+  text-decoration: none
 
-input[type="submit"], button 
+input[type="submit"], button , .btn
   border-style: solid
   border-width: 3px
   font-weight: 500
@@ -40,6 +42,13 @@ input[type="submit"], button
   margin-bottom: .25em
   margin-top: .25em
   cursor: pointer
+  outline: none
+  display: flex
+  align-items: center
+  justify-content: center
+  &:focus, &:hover
+    background: white
+    color: #9f9fae
 
 input
   height: 3.75rem
@@ -50,6 +59,7 @@ input
   line-height: 1.5
   font-size: 1.125rem
   font-family: Montserrat, sans-serif
+  outline: none
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button 

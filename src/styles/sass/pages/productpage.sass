@@ -6,13 +6,13 @@
 .product-listing
   display: flex
   flex-direction: column
+  
   margin-bottom: 4.625rem
   @media screen and (min-width: $phone)
     flex-direction: row
 
   .product-image
-    margin: 0
-    width: 100%
+    width: 75%
     display: block
     @media screen and (min-width: $phone)
       width: 55%
@@ -23,13 +23,12 @@
       margin: 0
       width: 100%
       border: 0
-      
   
   .product-description
-    margin: 0 0 0 4.625rem
-    width: 100%
+    width: 75%
     @media screen and (min-width: $phone)
       width: 45%
+      margin: 0 0 0 4.625rem
 
     h2
       margin: 1.875rem 0 .3125rem
@@ -57,48 +56,51 @@
       color: $bluishgrey
       font-weight: 400
 
-    .quantity-input 
-      display: flex
-      min-width: 9.0625rem
-      margin-top: 3.75rem
-      padding: 0
-      margin-bottom: 1em
-    .quantity
-      background: #f0f0f0
-      border: 3px solid #f0f0f0
-      margin: 0
-      max-height: 2.5rem
-      max-width: 4rem
-      min-height: 0
-      padding: .25rem
-      text-align: center
-      align-items: center
-      display: flex
-      flex-direction: row
-    .number-button
-      font-size: 1.5rem
-      font-weight: 600
-      margin: 0
-      max-height: 2.5rem
-      padding: 0
-      width: 2.5rem
-      
-    .submit
-      line-height: 1.875
-      font-size: 1.5rem
-      font-family: Montserrat, sans-serif
-      font-weight: 3
-      color: #50505b
-      margin: 1.875rem auto 0 0
-      background: #2d2d40
-      border-color: #2d2d40
-      color: #fff
-      max-width: 15rem
-      min-height: 5rem
+.quantity-input 
+  display: flex
+  min-width: 9.0625rem
+  //margin-top: 3.75rem
+  padding: 0
+  //margin-bottom: 1em
+.quantity
+  background: #f0f0f0
+  border: 3px solid #f0f0f0
+  margin: 0
+  max-height: 2.5rem
+  max-width: 4rem
+  min-height: 0
+  padding: .25rem
+  text-align: center
+  align-items: center
+  display: flex
+  flex-direction: row
+  &:focus
+    border: 3px solid #9f9fae
+    background: white
+.number-button
+  font-size: 1.5rem
+  font-weight: 600
+  margin: 0
+  max-height: 2.5rem
+  padding: 0
+  width: 2.5rem
 
-      @media (min-width: $phone)
-        width: 15rem
-      
-
-
-.product-info
+.submit
+  line-height: 1.875
+  font-size: 1.5rem
+  font-family: Montserrat, sans-serif
+  font-weight: 400
+  color: #50505b
+  margin: 1.875rem auto 0 0
+  background: #2d2d40
+  border-color: #2d2d40
+  color: #fff
+  max-width: 15rem
+  min-height: 5rem
+  &:hover
+    border: 3px solid #2d2d40
+    background: white
+    color: #2d2d40
+  @media (min-width: $phone)
+    width: 15rem    
+        

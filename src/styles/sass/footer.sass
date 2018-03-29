@@ -1,0 +1,48 @@
+footer
+  border-top: 5px solid #f0f0f0
+  display: flex
+  flex-direction: column
+  padding-bottom: 4.625rem
+  padding-top: 4.625rem
+
+  @media screen and (min-width: $phone)
+    flex-direction: row
+
+  .footer-header
+    
+    margin-bottom: 1rem
+    height: 2rem
+
+  img
+    
+    font-size: 1rem
+    height: 100%
+    margin-top: 0
+    width: auto
+
+
+  p, a
+    margin: 1rem 0
+    max-width: 13rem
+    font-size: .875rem
+    line-height: 1.625rem
+    font-weight: 300
+    color: $bluishgrey
+  
+  a
+    text-transform: uppercase
+    text-decoration: none
+    &:hover
+      color: lighten($bluishgrey,30%)
+
+  
+  .footer-about, .footer-links
+    width: 100%
+
+    @media screen and (min-width: $phone)
+      margin: 0 1.875rem 0 0
+      width: calc((100% - 3.75rem)/ 3)
+
+  .footer-links
+
+  .footer-social

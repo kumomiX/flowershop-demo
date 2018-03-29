@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ProductList from 'components/products/ProductList'
-import Loading from 'components/global/Loading'
+
 import Navbar from 'components/global/Navbar'
 
 class ProductsPage extends Component {
@@ -10,11 +10,7 @@ class ProductsPage extends Component {
       <div>
         <Navbar />
         <main className="products">
-          {this.props.flowers ? (
-            <ProductList products={this.props.flowers} />
-          ) : (
-            <Loading />
-          )}
+          <ProductList products={this.props.flowers} />
         </main>
       </div>
     )

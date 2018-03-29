@@ -10,13 +10,14 @@ import configureStore from 'store/configureStore'
 
 WebFont.load({
   google: {
-    families: ['Roboto', 'Montserrat', 'sans-serif']
+    families: ['Montserrat:200,300,400,500', 'sans-serif']
   }
 })
 
 const store = configureStore()
 store.dispatch({ type: 'CLEAR' })
 store.dispatch({ type: 'CLEAR_FILTER' })
+//store.dispatch({ type: 'CLEAR_CART' })
 
 const Root = () => (
   <Provider store={store}>
