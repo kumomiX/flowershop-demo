@@ -4,23 +4,23 @@ footer
   flex-direction: column
   padding-bottom: 4.625rem
   padding-top: 4.625rem
-
-  @media screen and (min-width: $phone)
+  // justify-content: center
+  // align-items: center
+  @media screen and (min-width: $tablet)
     flex-direction: row
 
   .footer-header
-    
-    margin-bottom: 1rem
-    height: 2rem
-
-  img
-    
-    font-size: 1rem
-    height: 100%
+    // width: 100%
     margin-top: 0
-    width: auto
+    margin-bottom: 1rem
+    height: 1.5rem
 
-
+    img  
+      width: auto
+      font-size: 1rem
+      height: 100%
+      margin: 0
+      
   p, a
     margin: 1rem 0
     max-width: 13rem
@@ -36,13 +36,15 @@ footer
       color: lighten($bluishgrey,30%)
 
   
-  .footer-about, .footer-links
-    width: 100%
 
-    @media screen and (min-width: $phone)
-      margin: 0 1.875rem 0 0
-      width: calc((100% - 3.75rem)/ 3)
 
-  .footer-links
+  .footer-links, .footer-about, .footer-social
+    margin: 1.875rem auto 0
+    min-width: 17.3125rem
 
-  .footer-social
+  // .footer-social, .footer-links
+  //   width: 100%
+
+  //   @media screen and (min-width: $tablet)
+  //     margin: 0 1.875rem 0 0
+  //     width: calc((100% - 3.75rem)/ 3)

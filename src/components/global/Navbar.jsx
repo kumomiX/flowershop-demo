@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import logo from 'assets/logo/logo1.svg'
+import NavbarBig from 'components/global/NavbarBig'
+import NavbarMobile from 'components/global/NavbarMobile'
 
 class Navbar extends Component {
   state = {
     scrolled: false
   }
 
+  resize = () => this.forceUpdate()
+
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.resize)
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.resize)
   }
 
   handleScroll = () => {
@@ -24,37 +28,29 @@ class Navbar extends Component {
     }
   }
 
+  getWidth = () =>
+    Math.max(
+      document.body.scrollWidth,
+      document.documentElement.scrollWidth,
+      document.body.offsetWidth,
+      document.documentElement.offsetWidth,
+      document.documentElement.clientWidth
+    )
+
   render() {
-    return (
-      <nav>
-        <div
-          className={
-            'nav-container' +
-            (this.props.light ? ' light ' : ' ') +
-            (this.state.scrolled ? ' scrolled' : ' ')
-          }
-        >
-          <nav className="primary-nav">
-            <Link to="/products">Products</Link>
-            <Link to="/options">Options</Link>
-          </nav>
-
-          <Link to="/">
-            <img
-              src={this.props.light ? logo : logo}
-              alt="flowershop"
-              className="logo"
-            />
-          </Link>
-
-          <nav className="secondary-nav">
-            <Link to="/cart">Cart ({this.props.quantity})</Link>
-          </nav>
-        </div>
-        {/* {this.state.scrolled && (
-          <button className="scroll-btn" onClick={e => window.scrollTo(0, 0)} />
-        )} */}
-      </nav>
+    const pageWidth = this.getWidth()
+    return pageWidth <= 1000 ? (
+      <NavbarMobile
+        light={this.props.light}
+        quantity={this.props.quantity}
+        scrolled={this.state.scrolled}
+      />
+    ) : (
+      <NavbarBig
+        light={this.props.light}
+        quantity={this.props.quantity}
+        scrolled={this.state.scrolled}
+      />
     )
   }
 }

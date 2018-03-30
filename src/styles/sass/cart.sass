@@ -3,11 +3,40 @@
     font-weight: 300
     margin: 0
 
+
+
 .cart-listing
   max-width: none
   padding: 0
-  margin-bottom: 1em
-  margin-top: 1em
+  //margin-bottom: 1em
+  //margin-top: 1em
+
+  &.empty
+    border-top: 5px solid #f0f0f0
+    margin-top: 4.625rem
+    padding: 1.875rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    p
+      font-weight: 500
+      margin: 1.875rem auto 0
+      text-align: center
+      font-size: 1.75rem
+      line-height: 2.5rem
+    .btn
+      background: #d7f0ea
+      border: 0
+      color: #2d2d40
+      margin: 3.75rem auto 1.875rem
+      max-width: 15rem
+      min-height: 5rem
+      justify-content: center
+      &:hover, &:active
+        color: #d7f0ea
+        background: #2d2d40
+      @media screen and (min-width: $tablet)
+        width: 15rem
 
   .total-price
     border-bottom: 5px solid #f0f0f0
@@ -20,18 +49,18 @@
     align-items: center
     display: flex
     flex-direction: row
-    @media screen and (min-width: $phone)
+    @media screen and (min-width: $tablet)
       justify-content: flex-end
     .price
       margin: 0
       margin-left: auto
       padding-left: 1.875rem
-      @media screen and (min-width: $phone)
+      @media screen and (min-width: $tablet)
         margin: 0
 
   .submit
     margin: 1.875rem auto
-    @media screen and (min-width: $phone)
+    @media screen and (min-width: $tablet)
       margin: 1.875rem 1.875rem 1.875rem auto
 
 .cart-list-headings
@@ -43,7 +72,7 @@
   .cart-product-header
     padding-right: 1.875rem
     width: 10.625rem
-    @media screen and (max-width: $phone)
+    @media screen and (max-width: $tablet)
       display: none
 
   
@@ -52,7 +81,7 @@
     align-items: center
     flex: 1
     flex-direction: row
-    @media screen and (max-width: $phone)
+    @media screen and (max-width: $tablet)
       display: none
     & > div
       padding-right: 1.875rem
@@ -60,35 +89,46 @@
 
 .cart-item
   display: flex
-  flex-direction: row
+  flex-direction: column
   padding: 1.875rem
   position: relative
+  @media screen and (min-width: $phone)
+    flex-direction: row
 
   .product-image
     flex-shrink: 0
-    height: 8.75rem
-    margin: 0 1.875rem 0 0
-    width: 8.75rem
+
+    margin: 0 auto 1.875rem
+    height: auto
+    max-height: 8.75rem
+    width: 100%
+    max-width: 8.75rem
     img
       height: inherit
       margin: 0
       width: inherit
       border: 0
       background: rgb(218, 218, 218)
+    @media screen and (min-width: $phone)
+      margin: 0 1.875rem 0 0
+      width: 8.75rem
+      height: 8.75rem
 
   .cart-details
     display: flex
     flex-grow: 1
     align-items: center
     flex-direction: column
-    padding-right: 2.5rem
+    text-align: center
     @media screen and (min-width: $phone)
       flex-direction: row
+      padding-right: 2.5rem
+    @media screen and (min-width: $tablet)
       padding-right: 0
     .cart-title, .cart-quantity, .cart-price
       padding: 0 0 1.25rem
       width: 100%
-      @media screen and (min-width: $phone)
+      @media screen and (min-width: $tablet)
         padding: 0 1.875rem 0 0
         width: 33.33%
     .quantity-input
@@ -101,12 +141,15 @@
 
   .cart-delete
     position: absolute
-    right: .9375rem
-    top: .9375rem
     align-items: center
     display: flex
     flex-direction: row
+    top: .9375rem
+    right: -.9375rem
     @media screen and (min-width: $phone)
+      right: .9375rem
+      top: .9375rem
+    @media screen and (min-width: $tablet)
       height: 100%
       top: 0
     .remove

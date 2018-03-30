@@ -7,7 +7,7 @@ const CartListing = ({ cart, changeQuantity, removeFromCart, addQuantity }) => {
     (acc, x) => (acc += x.quantity * x.product.price),
     0
   )
-  return (
+  return cart.length > 0 ? (
     <form action="" className="cart-listing">
       <div className="cart-list-headings">
         <div className="cart-product-header">Product</div>
@@ -17,17 +17,16 @@ const CartListing = ({ cart, changeQuantity, removeFromCart, addQuantity }) => {
           <div className="cart-price-header">Price</div>
         </div>
       </div>
-      {cart.length > 0 &&
-        cart.map((item, index) => (
-          <CartItem
-            key={index}
-            index={index}
-            item={item}
-            changeQuantity={changeQuantity}
-            removeFromCart={removeFromCart}
-            addQuantity={addQuantity}
-          />
-        ))}
+      {cart.map((item, index) => (
+        <CartItem
+          key={index}
+          index={index}
+          item={item}
+          changeQuantity={changeQuantity}
+          removeFromCart={removeFromCart}
+          addQuantity={addQuantity}
+        />
+      ))}
       <div className="total-price">
         Subtotal
         <span className="price">${subtotal}</span>
@@ -36,6 +35,13 @@ const CartListing = ({ cart, changeQuantity, removeFromCart, addQuantity }) => {
         Checkout
       </Link>
     </form>
+  ) : (
+    <div className="cart-listing empty">
+      <p>Your cart seems to be empty.</p>
+      <Link to="/products" className="btn">
+        Start shopping
+      </Link>
+    </div>
   )
 }
 

@@ -1,66 +1,188 @@
-  
+.nav-container, .logo
+  left: 0
+  top: 0
+  right: 0
+
 .nav-container  
-  
   display: flex
   align-items: center
   justify-content: flex-start
   position: fixed
   font-size: 1.2rem
   padding: 1.875rem
-  z-index: 1000
+  z-index: 800
   font-weight: 400
-  color: $darkgrey
-  a
-    text-decoration: none
-    color: $darkgrey
-    padding: .3rem
-    &:hover
-      color: lighten($darkgrey,40%)
+  color: $bluishgrey
 
   .logo
     position: absolute
-    padding: 1.875rem
+    padding: 2rem
     margin: 0 auto
+    width: 40%
+    height: 100%
+    // @media screen and (max-width: $tablet)
+    //   width: 100%
+
+
+  &.light
+    color: white
+    a 
+      color: white
+      &:hover
+        color: darken(white,30%)
+    .secondary-nav
+      @media screen and (max-width: $tablet)
+        background: white
+        a 
+          color: $bluishgrey
+          &:hover
+            background: darken(white, 15%)
+            color: $bluishgrey
+        &:hover
+          background: darken(white, 15%)
+          a 
+           color: $bluishgrey
+           background: darken(white, 15%)
+    
+  &.scrolled
+    color: $bluishgrey
+    background: white
+    .secondary-nav
+      @media screen and (max-width: $tablet)
+        background: $bluishgrey
+        a 
+          color: white
+          &:hover
+            background: lighten($bluishgrey, 15%)
+            color: white
+        &:hover
+          background: lighten($bluishgrey, 15%)
+          a 
+           color: white
+           background: lighten($bluishgrey, 15%)
+
+  &.scrolled.light
+    a
+      color: $bluishgrey
+      &:hover
+        color: lighten($bluishgrey, 40%)
+    .secondary-nav
+      @media screen and (max-width: $tablet)
+        background: $bluishgrey
+        a 
+          color: white
+          &:hover
+            background: lighten($bluishgrey, 15%)
+            color: white
+        &:hover
+          background: lighten($bluishgrey, 15%)
+          a 
+           color: white
+           background: lighten($bluishgrey, 15%)
+
+  .primary-nav
+    margin: 0
+    margin-right: auto
+    a
+      margin-right: 1rem
   
-.nav-container.light
+  .secondary-nav 
+    margin: 0
+    margin-left: auto
+    @media screen and (max-width: $tablet)
+      align-items: center
+      border-radius: 50%
+      display: flex
+      height: 2.5rem
+      justify-content: center
+      margin-bottom: -.375rem
+      margin-top: -.375rem
+      padding: .375rem
+      text-align: center
+      width: 2.5rem
+      cursor: pointer
+      background: $bluishgrey
+      a 
+        color: white
+        &:hover
+          background: lighten($bluishgrey, 15%)
+          color: white
+      &:hover
+        background: lighten($bluishgrey, 15%)
+        a 
+        color: white
+        background: lighten($bluishgrey, 15%)
+      
+
+
+
+// .scroll-btn
+//   display: flex
+//   justify-content: center
+//   align-items: center
+//   border-radius: 50%
+//   position: fixed
+//   right: 20px
+//   bottom: 20px
+//   width: 20px
+//   height: 20px
+//   outline: none
+//   z-index: 1000
+
+
+
+/* Position and sizing of burger button */
+.bm-burger-button 
+  position: fixed
+  width: 2rem
+  height: 1.4rem
+  left: 1.875rem
+  top: calc(1.875rem + .135rem)
+
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars, nav.light.scrolled .bm-burger-bars, nav.scrolled .bm-burger-bars
+  background: $bluishgrey
+
+nav.light .bm-burger-bars
+  background: white
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button 
+  height: 24px
+  width: 24px
+
+
+/* Color/shape of close button cross */
+.bm-cross 
+  background: white
+  &:hover
+    background: $bluishgrey
+
+/* General sidebar styles */
+.bm-menu 
+  background: rgba($bluishgrey, .9)
+  padding: 2.5rem 1.5rem 0
+  font-size: 1.5rem
+
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape 
+  fill: rgba($bluishgrey, .9)
+
+
+/* Wrapper for item list */
+.bm-item-list 
+  padding: 2rem
   color: white
   a 
     color: white
+    padding: 1rem
     &:hover
       color: darken(white,40%)
 
-.nav-container, .logo
-  left: 0
-  top: 0
-  right: 0
-  
-.nav-container.scrolled
-  color: $darkgrey
-  background: white
 
-  a 
-    color: $darkgrey  
-
-.primary-nav
-  margin: 0
-  margin-right: auto
-
-  a
-    margin-right: 1rem
-  
-.secondary-nav 
-  margin: 0
-  margin-left: auto
-
-.scroll-btn
-  display: flex
-  justify-content: center
-  align-items: center
-  border-radius: 50%
-  position: fixed
-  right: 20px
-  bottom: 20px
-  width: 20px
-  height: 20px
-  outline: none
-  z-index: 1000
+/* Styling of overlay */
+.bm-overlay 
+  background: rgba(0, 0, 0, 0.3)
+    

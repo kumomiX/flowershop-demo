@@ -33,6 +33,11 @@ const CartItem = ({
     }
   }
 
+  const onRemove = e => {
+    e.preventDefault()
+    removeFromCart(item.product.id)
+  }
+
   return (
     <div className="cart-item">
       <div className="product-image">
@@ -64,7 +69,7 @@ const CartItem = ({
         </div>
 
         <div className="cart-delete">
-          <button className="remove">
+          <button className="remove" onClick={onRemove}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 15.55635 15.55635"
