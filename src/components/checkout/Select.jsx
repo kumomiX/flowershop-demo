@@ -2,7 +2,13 @@ import React from 'react'
 
 const Select = ({ name, options }) => (
   <label className={`input-wrap ${name} required select-fallback`}>
-    <select type="text" name={name} required aria-label={name}>
+    <select
+      type="text"
+      name={name}
+      required
+      aria-label={name}
+      autoComplete={name}
+    >
       {options.map((opt, ind) => (
         <option key={ind} value={opt.value}>
           {opt.placeholder}

@@ -9,6 +9,7 @@ const Input = ({ name, placeholder, required }) => {
         required
         placeholder={placeholder}
         aria-label={name}
+        autoComplete={name}
       />
     </label>
   ) : (
@@ -19,6 +20,7 @@ const Input = ({ name, placeholder, required }) => {
         className={name}
         placeholder={placeholder}
         aria-label={name}
+        autoComplete={name}
       />
     </label>
   )

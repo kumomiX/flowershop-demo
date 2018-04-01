@@ -15,9 +15,9 @@ const HomePage = ({ flowers, setFilter }) => (
       imageUrl={'https://unsplash.it/1980?image=940'}
       arrow
     />
-    <OptionsList products={flowers} setFilter={setFilter} />
+    <OptionsList products={flowers.products} setFilter={setFilter} />
     <main>
-      {flowers ? <TopPicks products={flowers} /> : <div>Loading...</div>}
+      <TopPicks products={flowers.products} />
     </main>
     <Footer />
   </div>

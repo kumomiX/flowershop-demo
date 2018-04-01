@@ -9,24 +9,27 @@ import Options from 'components/pages/OptionsPage'
 import Product from 'components/pages/ProductPage'
 import Cart from 'components/pages/CartPage'
 import Checkout from 'components/pages/CheckoutPage'
-import Loading from 'components/global/Loading'
+import Loader from 'react-loader'
 
 class App extends Component {
   componentDidMount() {
-    if (this.props.flowers.length <= 0) this.props.fetchFlowersWithRedux()
+    if (!this.props.flowers.fetched) this.props.fetchFlowersWithRedux()
   }
+
   render() {
-    return this.props.flowers.length > 0 ? (
+    return (
       <div>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/products" component={Products} />
-        <Route exact path="/options" component={Options} />
-        <Route exact path="/cart" component={Cart} />
-        <Route exact path="/checkout" component={Checkout} />
-        <Route path="/product" component={Product} />
+        <Loader loaded={this.props.flowers.fetched}>
+          <div>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/products" component={Products} />
+            <Route exact path="/options" component={Options} />
+            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/checkout" component={Checkout} />
+            <Route path="/product" component={Product} />
+          </div>
+        </Loader>
       </div>
-    ) : (
-      <Loading />
     )
   }
 }

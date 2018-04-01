@@ -21,12 +21,12 @@ class CheckoutFieldset extends Component {
 
   render() {
     const { header, inputs, countrySelect, select, submit } = this.props
-
     const { completed, collapsed } = this.state
     const className =
       ` ${this.props.className}` +
       (collapsed ? ' collapsed' : '') +
       (completed ? ' completed' : '')
+
     return (
       <fieldset className={className}>
         <div

@@ -16,7 +16,7 @@ const ProductsPage = ({ products }) => (
 )
 
 const mapStateToProps = state => {
-  const products = state.flowers
+  const products = state.flowers.products
   return { products }
 }
 

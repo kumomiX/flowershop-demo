@@ -5,6 +5,7 @@ import ProductList from 'components/products/ProductList'
 import { connect } from 'react-redux'
 import OptionsLinks from 'components/options/OptionsLinks'
 import setFilter from 'actions/filterActions'
+import { PulseLoader } from 'react-spinners'
 
 class OptionsPage extends Component {
   render() {
@@ -38,7 +39,9 @@ class OptionsPage extends Component {
             </main>
           </div>
         ) : (
-          <main>Loading...</main>
+          <div className="loading">
+            <PulseLoader color={'#50505b'} />
+          </div>
         )}
       </div>
     )
@@ -46,7 +49,7 @@ class OptionsPage extends Component {
 }
 
 const mapStateToProps = state => {
-  const flowers = state.flowers
+  const flowers = state.flowers.products
   const filterStr = state.filter
   return { flowers, filterStr }
 }
