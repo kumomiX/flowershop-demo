@@ -41,7 +41,7 @@ class ProductPage extends Component {
 }
 
 const mapStateToProps = state => {
-  const flowers = state.flowers
+  const flowers = state.flowers.products
   const cart = state.cart
   return { flowers, cart }
 }

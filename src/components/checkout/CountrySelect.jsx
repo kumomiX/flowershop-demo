@@ -2,7 +2,12 @@ import React from 'react'
 
 const CountrySelect = () => (
   <label className="input-wrap country required select-fallback">
-    <select name="country" required aria-invalid="false">
+    <select
+      name="country"
+      required
+      aria-invalid="false"
+      autoComplete="country-select"
+    >
       <option value="">Country</option>
       <option value="AF">Afghanistan</option>
       <option value="AX">Åland Islands</option>

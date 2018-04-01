@@ -45,13 +45,13 @@ const CheckoutForm = ({ clearCart }) => (
       header={'Payment'}
       className="payment"
       inputs={[
-        { name: 'card-name', placeholder: 'Name on card', required: true },
-        { name: 'card-number', placeholder: 'Card number', required: true },
-        { name: 'card-cvc', placeholder: 'CVC', required: true }
+        { name: 'cc-name', placeholder: 'Name on card', required: true },
+        { name: 'cc-number', placeholder: 'Card number', required: true },
+        { name: 'cc-csc', placeholder: 'CSC', required: true }
       ]}
       select={[
         {
-          name: 'expiry-month',
+          name: 'cc-exp-month',
           options: [
             { value: '01', placeholder: 'January' },
             { value: '02', placeholder: 'February' },
@@ -68,7 +68,7 @@ const CheckoutForm = ({ clearCart }) => (
           ]
         },
         {
-          name: 'expiry-year',
+          name: 'cc-exp-year',
           options: [
             { value: 2017, placeholder: 2017 },
             { value: 2018, placeholder: 2018 },
