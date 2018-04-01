@@ -5,7 +5,6 @@ import ProductList from 'components/products/ProductList'
 import { connect } from 'react-redux'
 import OptionsLinks from 'components/options/OptionsLinks'
 import setFilter from 'actions/filterActions'
-import { PulseLoader } from 'react-spinners'
 
 class OptionsPage extends Component {
   render() {
