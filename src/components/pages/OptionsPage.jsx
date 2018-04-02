@@ -14,34 +14,31 @@ class OptionsPage extends Component {
       <div className="optionspage">
         <Navbar light={'light'} />
 
-        {flowers.length >= 1 && filterStr.length >= 1 ? (
-          <div>
-            <Header
-              text={filterStr || flowers[0].color}
-              imageUrl={flowers
-                .find(f => f.color === filterStr)
-                .imageUrl.replace(/\/\d\d\d\?/, '/1980?')}
-            />
+        {flowers.length >= 1 &&
+          filterStr.length >= 1 && (
+            <div>
+              <Header
+                text={filterStr || flowers[0].color}
+                imageUrl={flowers
+                  .find(f => f.color === filterStr)
+                  .imageUrl.replace(/\/\d\d\d\?/, '/1980?')}
+              />
 
-            <main>
-              <OptionsLinks
-                flowers={flowers}
-                setFilter={this.props.setFilter}
-              />
-              <ProductList
-                products={
-                  filterStr.length >= 1
-                    ? flowers.filter(f => f.color === filterStr)
-                    : flowers
-                }
-              />
-            </main>
-          </div>
-        ) : (
-          <div className="loading">
-            <PulseLoader color={'#50505b'} />
-          </div>
-        )}
+              <main>
+                <OptionsLinks
+                  flowers={flowers}
+                  setFilter={this.props.setFilter}
+                />
+                <ProductList
+                  products={
+                    filterStr.length >= 1
+                      ? flowers.filter(f => f.color === filterStr)
+                      : flowers
+                  }
+                />
+              </main>
+            </div>
+          )}
       </div>
     )
   }
