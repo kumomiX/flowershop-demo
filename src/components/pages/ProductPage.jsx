@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from 'components/global/Navbar'
 import { connect } from 'react-redux'
-import Loading from 'components/global/Loading'
+
 import ProductListing from 'components/products/ProductListing'
 import addToCartWithRedux from 'actions/cartActions'
 import { addQuantityWithRedux } from 'actions/cartActions'
@@ -21,21 +21,21 @@ class ProductPage extends Component {
   }
 
   render() {
-    return Object.getOwnPropertyNames(this.product).length >= 1 ? (
-      <div className="product-page">
-        <Navbar />
+    return (
+      Object.getOwnPropertyNames(this.product).length >= 1 && (
+        <div className="product-page">
+          <Navbar />
 
-        <main className="content">
-          <ProductListing
-            addToCart={this.props.addToCart}
-            addQuantity={this.props.addQuantity}
-            product={this.product}
-            cart={this.props.cart}
-          />
-        </main>
-      </div>
-    ) : (
-      <Loading />
+          <main className="content">
+            <ProductListing
+              addToCart={this.props.addToCart}
+              addQuantity={this.props.addQuantity}
+              product={this.product}
+              cart={this.props.cart}
+            />
+          </main>
+        </div>
+      )
     )
   }
 }
