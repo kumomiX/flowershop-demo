@@ -30,10 +30,7 @@ const CartPage = ({ cart, changeQuantity, removeFromCart, addQuantity }) => (
     <Footer />
   </div>
 )
-const mapStateToProps = state => {
-  const cart = state.cart
-  return { cart }
-}
+const mapStateToProps = ({ cart }) => ({ cart })
 
 const mapDispatchToProps = dispatch => ({
   changeQuantity: (index, quantity) =>
@@ -43,4 +40,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addQuantityWithRedux(index, quantity))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartPage)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CartPage)

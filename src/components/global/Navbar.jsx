@@ -28,18 +28,18 @@ class Navbar extends Component {
     }
   }
 
-  getWidth = () =>
-    Math.max(
+  get pageWidth() {
+    return Math.max(
       document.body.scrollWidth,
       document.documentElement.scrollWidth,
       document.body.offsetWidth,
       document.documentElement.offsetWidth,
       document.documentElement.clientWidth
     )
+  }
 
   render() {
-    const pageWidth = this.getWidth()
-    return pageWidth <= 1000 ? (
+    return this.pageWidth <= 1000 ? (
       <NavbarMobile
         light={this.props.light}
         quantity={this.props.quantity}
@@ -55,10 +55,9 @@ class Navbar extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  const cart = state.cart
+const mapStateToProps = ({ cart }) => {
   const quantity = cart.reduce((acc, item) => (acc += item.quantity), 0)
   return { quantity }
 }
 
-export default connect(mapStateToProps, null)(Navbar)
+export default connect(mapStateToProps)(Navbar)
