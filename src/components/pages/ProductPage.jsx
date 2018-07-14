@@ -25,7 +25,7 @@ class ProductPage extends Component {
       Object.getOwnPropertyNames(this.product).length >= 1 && (
         <div className="product-page">
           <Navbar />
-
+          <header />
           <main className="content">
             <ProductListing
               addToCart={this.props.addToCart}

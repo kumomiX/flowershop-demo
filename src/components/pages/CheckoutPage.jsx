@@ -7,11 +7,12 @@ import { clearCart } from 'actions/cartActions'
 const CheckoutPage = ({ cart, clearCart }) => (
   <div className="checkoutpage">
     <Navbar />
-    <header className="smaller">
+    <header />
+    <div className="header smaller">
       <div className="content">
         <h1>checkout</h1>
       </div>
-    </header>
+    </div>
     <main>
       <Checkout cart={cart} clearCart={clearCart} />
     </main>
