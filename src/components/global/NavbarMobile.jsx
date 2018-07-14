@@ -29,12 +29,9 @@ const NavbarMobile = ({ history, light, scrolled, quantity }) => {
         )}
 
         <nav className="secondary-nav" onClick={() => history.push('/cart')}>
-          <Link to="/cart">{quantity}</Link>
+          {quantity}
         </nav>
       </div>
-      {/* {this.state.scrolled && (
-          <button className="scroll-btn" onClick={e => window.scrollTo(0, 0)} />
-        )} */}
     </nav>
   )
 }

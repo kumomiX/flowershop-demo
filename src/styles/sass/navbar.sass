@@ -42,16 +42,9 @@
     .secondary-nav
       @media screen and (max-width: $tablet)
         background: white
-        a 
-          color: $bluishgrey
-          &:hover
-            background: darken(white, 15%)
-            color: $bluishgrey
+        color: $bluishgrey
         &:hover
           background: darken(white, 15%)
-          a 
-           color: $bluishgrey
-           background: darken(white, 15%)
     
   &.scrolled
     color: $bluishgrey
@@ -59,35 +52,18 @@
     .secondary-nav
       @media screen and (max-width: $tablet)
         background: $bluishgrey
-        a 
-          color: white
-          &:hover
-            background: lighten($bluishgrey, 15%)
-            color: white
         &:hover
           background: lighten($bluishgrey, 15%)
-          a 
-           color: white
-           background: lighten($bluishgrey, 15%)
+
 
   &.scrolled.light
-    a
-      color: $bluishgrey
-      &:hover
-        color: lighten($bluishgrey, 40%)
     .secondary-nav
       @media screen and (max-width: $tablet)
+        color: white
         background: $bluishgrey
-        a 
-          color: white
-          &:hover
-            background: lighten($bluishgrey, 15%)
-            color: white
         &:hover
           background: lighten($bluishgrey, 15%)
-          a 
-           color: white
-           background: lighten($bluishgrey, 15%)
+          
 
   .primary-nav
     margin: 0
@@ -111,16 +87,10 @@
       width: 2.5rem
       cursor: pointer
       background: $bluishgrey
-      a 
-        color: white
-        &:hover
-          background: lighten($bluishgrey, 15%)
-          color: white
+      color: white
       &:hover
         background: lighten($bluishgrey, 15%)
-        a 
-        color: white
-        background: lighten($bluishgrey, 15%)
+
       
 
 

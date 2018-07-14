@@ -12,9 +12,10 @@ import {
 const CartPage = ({ cart, changeQuantity, removeFromCart, addQuantity }) => (
   <div className="cartpage">
     <Navbar />
-    <header className="smaller">
+    <header />
+    <div className="header smaller">
       <h1>shopping cart</h1>
-    </header>
+    </div>
     <main>
       <section className="cart">
         <div className="content">
@@ -30,6 +31,7 @@ const CartPage = ({ cart, changeQuantity, removeFromCart, addQuantity }) => (
     <Footer />
   </div>
 )
+
 const mapStateToProps = ({ cart }) => ({ cart })
 
 const mapDispatchToProps = dispatch => ({
