@@ -1,14 +1,14 @@
 import React from 'react'
-import logo from 'assets/logo/logo-big.svg'
-import about from 'assets/logo/about.svg'
-import social from 'assets/logo/social.svg'
+import Logo from 'components/svgs/logoFooter'
+import About from 'components/svgs/about'
+import Social from 'components/svgs/social'
 
 const Footer = () => (
   <div className="content">
     <footer>
       <div className="footer-about">
         <div className="footer-header">
-          <img src={logo} alt="" />
+          <Logo />
         </div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
@@ -17,7 +17,7 @@ const Footer = () => (
         <dl>
           <dt>
             <div className="footer-header">
-              <img src={about} alt="" />
+              <About />
             </div>
           </dt>
           <dd>
@@ -39,7 +39,7 @@ const Footer = () => (
         <dl>
           <dt>
             <div className="footer-header">
-              <img src={social} alt="" />
+              <Social />
             </div>
           </dt>
           <dd>

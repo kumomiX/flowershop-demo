@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logoLight from 'assets/logo/logo-small-light.svg'
-import logo from 'assets/logo/logo-small.svg'
+import Logo from 'components/svgs/logoSmall'
 import { elastic as Menu } from 'react-burger-menu'
 
 const NavbarMobile = ({ light, scrolled, quantity }) => {
@@ -21,15 +20,11 @@ const NavbarMobile = ({ light, scrolled, quantity }) => {
       >
         {scrolled ? (
           <Link to="/">
-            <img src={logo} alt="flowershop" className="logo" />
+            <Logo className="logo small" />
           </Link>
         ) : (
           <Link to="/">
-            <img
-              src={light ? logoLight : logo}
-              alt="flowershop"
-              className="logo"
-            />
+            <Logo className="logo small light" />
           </Link>
         )}
 

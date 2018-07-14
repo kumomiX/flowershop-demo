@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import logo from 'assets/logo/logo1.svg'
-import logoLight from 'assets/logo/logo-big-light.svg'
-import logo from 'assets/logo/logo-big.svg'
+import Logo from 'components/svgs/logoBig'
 
 const NavbarBig = ({ light, scrolled, quantity }) => (
   <nav>
@@ -19,15 +17,11 @@ const NavbarBig = ({ light, scrolled, quantity }) => (
       </nav>
       {scrolled ? (
         <Link to="/">
-          <img src={logo} alt="flowershop" className="logo" />
+          <Logo className="logo" />
         </Link>
       ) : (
         <Link to="/">
-          <img
-            src={light ? logoLight : logo}
-            alt="flowershop"
-            className="logo"
-          />
+          <Logo className="logo light" />
         </Link>
       )}
 
