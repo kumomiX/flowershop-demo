@@ -15,9 +15,9 @@ const ProductsPage = ({ products }) => (
   </div>
 )
 
-const mapStateToProps = state => {
-  const products = state.flowers.products
+const mapStateToProps = ({ flowers }) => {
+  const products = flowers.products
   return { products }
 }
 
-export default connect(mapStateToProps, null)(ProductsPage)
+export default connect(mapStateToProps)(ProductsPage)

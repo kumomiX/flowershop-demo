@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import Logo from 'components/svgs/logoSmall'
 import { elastic as Menu } from 'react-burger-menu'
 
-const NavbarMobile = ({ light, scrolled, quantity }) => {
+const NavbarMobile = ({ history, light, scrolled, quantity }) => {
   return (
     <nav className={(light ? ' light ' : ' ') + (scrolled ? ' scrolled' : ' ')}>
       <Menu>
@@ -28,7 +28,7 @@ const NavbarMobile = ({ light, scrolled, quantity }) => {
           </Link>
         )}
 
-        <nav className="secondary-nav">
+        <nav className="secondary-nav" onClick={() => history.push('/cart')}>
           <Link to="/cart">{quantity}</Link>
         </nav>
       </div>
@@ -39,4 +39,4 @@ const NavbarMobile = ({ light, scrolled, quantity }) => {
   )
 }
 
-export default NavbarMobile
+export default withRouter(NavbarMobile)

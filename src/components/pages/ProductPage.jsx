@@ -40,11 +40,11 @@ class ProductPage extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  const flowers = state.flowers.products
-  const cart = state.cart
-  return { flowers, cart }
-}
+const mapStateToProps = ({ flowers: { products }, cart }) => ({
+  flowers: products,
+  cart
+})
+
 const mapDispatchToProps = dispatch => ({
   addToCart: (product, quantity) =>
     dispatch(addToCartWithRedux(product, quantity)),
@@ -52,4 +52,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addQuantityWithRedux(index, quantity))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductPage)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProductPage)

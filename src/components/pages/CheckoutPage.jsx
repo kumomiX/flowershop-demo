@@ -18,13 +18,13 @@ const CheckoutPage = ({ cart, clearCart }) => (
   </div>
 )
 
-const mapStateToProps = state => {
-  const { cart } = state
-  return { cart }
-}
+const mapStateToProps = ({ cart }) => ({ cart })
 
 const mapDispatchToProps = dispatch => ({
   clearCart: () => dispatch(clearCart())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CheckoutPage)

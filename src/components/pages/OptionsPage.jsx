@@ -44,14 +44,16 @@ class OptionsPage extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  const flowers = state.flowers.products
-  const filterStr = state.filter
-  return { flowers, filterStr }
-}
+const mapStateToProps = ({ flowers: { products }, filter: filterStr }) => ({
+  flowers: products,
+  filterStr
+})
 
 const mapDispatchToProps = dispatch => ({
   setFilter: c => dispatch(setFilter(c))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(OptionsPage)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(OptionsPage)

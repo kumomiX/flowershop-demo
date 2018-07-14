@@ -23,13 +23,13 @@ const HomePage = ({ flowers, setFilter }) => (
   </div>
 )
 
-const mapStateToProps = state => {
-  const flowers = state.flowers
-  return { flowers }
-}
+const mapStateToProps = ({ flowers }) => ({ flowers })
 
 const mapDispatchToProps = dispatch => ({
   setFilter: c => dispatch(setFilter(c))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomePage)
