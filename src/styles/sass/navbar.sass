@@ -16,13 +16,22 @@
 
   .logo
     position: absolute
-    padding: 2rem
     margin: 0 auto
     width: 40%
     height: 100%
     // @media screen and (max-width: $tablet)
     //   width: 100%
-
+    fill: $bluishgrey
+    &.light
+      fill: white
+    &.small
+      height: calc(100% - 1rem * 2) !important
+      margin: 1rem auto !important
+      fill: $bluishgrey
+      stroke: $bluishgrey
+      &.light
+        fill: white
+        stroke: white
 
   &.light
     color: white
